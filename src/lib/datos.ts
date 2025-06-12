@@ -36,7 +36,7 @@ export const locales: Local[] = [
     id: 'el-buen-gusto',
     nombre: 'Pollo a la Brasa El Buen Gusto',
     categoria: 'Parrillada',
-    imagenUrl: '/imagenes/el-buen-gusto/principal.jpg',
+    imagenUrl: '/imagenes/el-buen-gusto/principal.jpeg',
     horario: '11:00 AM - 9:00 PM',
     telefono: '0976543210',
     diasAtencion: ['Martes', 'Jueves', 'Viernes', 'Domingo'],
