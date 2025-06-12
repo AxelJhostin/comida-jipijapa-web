@@ -2,17 +2,26 @@
 "use client"; 
 
 import TarjetaLocal from "@/components/TarjetaLocal";
+import TarjetaLocalSkeleton from "@/components/TarjetaLocalSkeleton";
 import { locales } from "@/lib/datos";
-import { useState } from "react"; 
+import { useState, useEffect } from "react"; 
 
 export default function Home() {
   const [terminoDeBusqueda, setTerminoDeBusqueda] = useState('');
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
+  const [estaCargando, setEstaCargando] = useState(true);
 
-  // Creamos una lista de categorías únicas a partir de nuestros datos
+  // Este efecto simula la carga de datos cuando la página se abre por primera vez.
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setEstaCargando(false); // Después de 1.5s, la carga termina.
+    }, 1500);
+
+    return () => clearTimeout(timer); // Limpieza del temporizador.
+  }, []); // El '[]' asegura que solo se ejecute una vez.
+
   const categorias = ['Todos', ...new Set(locales.map(local => local.categoria))];
 
-  // Lógica de filtrado que combina la categoría y el texto de búsqueda
   const localesFiltrados = locales.filter((local) => {
     const coincideCategoria = 
       categoriaSeleccionada === 'Todos' || local.categoria === categoriaSeleccionada;
@@ -36,7 +45,6 @@ export default function Home() {
         </p>
       </div>
 
-      {/* Barra de Búsqueda */}
       <div className="mb-8 max-w-lg mx-auto">
         <input 
           type="text"
@@ -47,33 +55,34 @@ export default function Home() {
         />
       </div>
 
-      {/* Botones de Filtro por Categoría */}
       <div className="flex justify-center flex-wrap gap-3 mb-12">
         {categorias.map((categoria) => (
           <button
             key={categoria}
             onClick={() => setCategoriaSeleccionada(categoria)}
-            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ease-in-out
-              ${categoriaSeleccionada === categoria 
-                ? 'bg-blue-600 text-white shadow-lg scale-105'
-                : 'bg-white text-gray-700 hover:bg-gray-200 border'
-              }`
-            }
+            className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ease-in-out ${categoriaSeleccionada === categoria ? 'bg-blue-600 text-white shadow-lg scale-105' : 'bg-white text-gray-700 hover:bg-gray-200 border'}`}
           >
             {categoria}
           </button>
         ))}
       </div>
 
-      {/* Contenedor de la lista en formato de cuadrícula */}
       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 max-w-6xl mx-auto">
-        {localesFiltrados.map((local) => (
-          <TarjetaLocal key={local.id} local={local} />
-        ))}
+        {estaCargando ? (
+          // Si está cargando, muestra 8 esqueletos
+          Array.from({ length: 8 }).map((_, index) => (
+            <TarjetaLocalSkeleton key={index} />
+          ))
+        ) : (
+          // Si no está cargando, muestra los locales filtrados
+          localesFiltrados.map((local) => (
+            <TarjetaLocal key={local.id} local={local} />
+          ))
+        )}
       </div>
 
-      {/* Mensaje para cuando no hay resultados */}
-      {localesFiltrados.length === 0 && (
+      {/* Mensaje para cuando no hay resultados (solo se muestra si la carga ya terminó) */}
+      {!estaCargando && localesFiltrados.length === 0 && (
         <div className="text-center mt-16">
           <p className="text-xl text-gray-500">No se encontraron locales que coincidan con tu búsqueda.</p>
           <p className="text-gray-400 mt-2">Intenta con otros filtros.</p>

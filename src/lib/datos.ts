@@ -1,22 +1,22 @@
 // lib/datos.ts
 
-// Definimos la "forma" que tendrá cada local con una interfaz de TypeScript.
+// 1. La interfaz define la "forma" de cada local. No hay cambios aquí.
 export interface Local {
-  id: string; // Un ID amigable para la URL, ej: 'pizzeria-don-mario'
+  id: string;
   nombre: string;
   categoria: string;
-  imagenUrl: string; // Ruta a una imagen local en nuestro proyecto
+  imagenUrl: string;
   horario: string;
   telefono: string;
   diasAtencion: string[];
   direccionFisica: string;
   menuUrl: string;
-  ubicacion: string; // Enlace a Google Maps
+  ubicacion: string;
   instagram: string;
   imagenesExtra: string[];
 }
 
-// Creamos una lista de ejemplo con nuestros locales.
+// 2. La lista de locales. El primer objeto ahora tiene imágenes extra.
 export const locales: Local[] = [
   {
     id: 'pizzeria-don-mario',
@@ -30,7 +30,12 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    // ¡AQUÍ ESTÁ LA MODIFICACIÓN IMPORTANTE!
+    imagenesExtra: [
+      '/imagenes/pizzeria-don-mario/foto1.jpg',
+      '/imagenes/pizzeria-don-mario/foto2.jpg',
+      '/imagenes/pizzeria-don-mario/foto3.jpg'
+    ],
   },
   {
     id: 'el-buen-gusto',
@@ -44,14 +49,13 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    imagenesExtra: [], // Este se queda vacío, por lo que no mostrará galería
   },
-  // --- 6 LOCALES NUEVOS ---
   {
     id: 'los-corviches-de-la-abuela',
     nombre: 'Los Corviches de la Abuela',
     categoria: 'Tradicional',
-    imagenUrl: '/imagenes/placeholder.jpg', // Usamos la imagen genérica
+    imagenUrl: '/imagenes/placeholder.jpg',
     horario: '08:00 AM - 01:00 PM',
     telefono: '0999999999',
     diasAtencion: ['Viernes', 'Sábado', 'Domingo'],
@@ -75,6 +79,7 @@ export const locales: Local[] = [
     instagram: '#',
     imagenesExtra: [],
   },
+  // ... y el resto de locales con 'imagenesExtra' vacío por ahora ...
   {
     id: 'super-hamburguesas',
     nombre: 'Super Hamburguesas',
