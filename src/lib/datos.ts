@@ -1,6 +1,5 @@
 // lib/datos.ts
 
-// 1. La interfaz define la "forma" de cada local. No hay cambios aquí.
 export interface Local {
   id: string;
   nombre: string;
@@ -16,13 +15,12 @@ export interface Local {
   imagenesExtra: string[];
 }
 
-// 2. La lista de locales. El primer objeto ahora tiene imágenes extra.
 export const locales: Local[] = [
   {
     id: 'pizzeria-don-mario',
     nombre: 'Pizzería Don Mario',
     categoria: 'Pizzería',
-    imagenUrl: '/imagenes/pizzeria-don-mario/principal.jpg',
+    imagenUrl: '/imagenes/pizzeria-don-mario/principal.jpeg', // Actualizado a .jpeg
     horario: '12:00 PM - 10:00 PM',
     telefono: '0987654321',
     diasAtencion: ['Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
@@ -30,7 +28,6 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    // ¡AQUÍ ESTÁ LA MODIFICACIÓN IMPORTANTE!
     imagenesExtra: [
       '/imagenes/pizzeria-don-mario/foto1.jpeg',
       '/imagenes/pizzeria-don-mario/foto2.jpeg',
@@ -41,7 +38,7 @@ export const locales: Local[] = [
     id: 'el-buen-gusto',
     nombre: 'Pollo a la Brasa El Buen Gusto',
     categoria: 'Parrillada',
-    imagenUrl: '/imagenes/el-buen-gusto/principal.jpg',
+    imagenUrl: '/imagenes/el-buen-gusto/principal.jpeg', // Usaremos .jpeg para consistencia
     horario: '11:00 AM - 9:00 PM',
     telefono: '0976543210',
     diasAtencion: ['Martes', 'Jueves', 'Viernes', 'Domingo'],
@@ -49,13 +46,17 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [], // Este se queda vacío, por lo que no mostrará galería
+    imagenesExtra: [
+      '/imagenes/el-buen-gusto/foto1.jpeg',
+      '/imagenes/el-buen-gusto/foto2.jpeg',
+      '/imagenes/el-buen-gusto/foto3.jpeg'
+    ],
   },
   {
     id: 'los-corviches-de-la-abuela',
     nombre: 'Los Corviches de la Abuela',
     categoria: 'Tradicional',
-    imagenUrl: '/imagenes/placeholder.jpg',
+    imagenUrl: '/imagenes/los-corviches-de-la-abuela/principal.jpeg',
     horario: '08:00 AM - 01:00 PM',
     telefono: '0999999999',
     diasAtencion: ['Viernes', 'Sábado', 'Domingo'],
@@ -63,13 +64,17 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    imagenesExtra: [
+      '/imagenes/los-corviches-de-la-abuela/foto1.jpeg',
+      '/imagenes/los-corviches-de-la-abuela/foto2.jpeg',
+      '/imagenes/los-corviches-de-la-abuela/foto3.jpeg'
+    ],
   },
   {
     id: 'cafe-del-valle',
     nombre: 'Café del Valle',
     categoria: 'Cafetería',
-    imagenUrl: '/imagenes/placeholder.jpg',
+    imagenUrl: '/imagenes/cafe-del-valle/principal.jpeg',
     horario: '09:00 AM - 08:00 PM',
     telefono: '0988888888',
     diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
@@ -77,14 +82,17 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    imagenesExtra: [
+      '/imagenes/cafe-del-valle/foto1.jpeg',
+      '/imagenes/cafe-del-valle/foto2.jpeg',
+      '/imagenes/cafe-del-valle/foto3.jpeg'
+    ],
   },
-  // ... y el resto de locales con 'imagenesExtra' vacío por ahora ...
   {
     id: 'super-hamburguesas',
     nombre: 'Super Hamburguesas',
     categoria: 'Comida Rápida',
-    imagenUrl: '/imagenes/placeholder.jpg',
+    imagenUrl: '/imagenes/super-hamburguesas/principal.jpeg',
     horario: '06:00 PM - 11:00 PM',
     telefono: '0977777777',
     diasAtencion: ['Jueves', 'Viernes', 'Sábado', 'Domingo'],
@@ -92,13 +100,17 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    imagenesExtra: [
+      '/imagenes/super-hamburguesas/foto1.jpeg',
+      '/imagenes/super-hamburguesas/foto2.jpeg',
+      '/imagenes/super-hamburguesas/foto3.jpeg'
+    ],
   },
   {
     id: 'el-rincon-manabita',
     nombre: 'El Rincón Manabita',
     categoria: 'Tradicional',
-    imagenUrl: '/imagenes/placeholder.jpg',
+    imagenUrl: '/imagenes/el-rincon-manabita/principal.jpeg',
     horario: '12:00 PM - 04:00 PM',
     telefono: '0966666666',
     diasAtencion: ['Sábado', 'Domingo'],
@@ -106,13 +118,17 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    imagenesExtra: [
+      '/imagenes/el-rincon-manabita/foto1.jpeg',
+      '/imagenes/el-rincon-manabita/foto2.jpeg',
+      '/imagenes/el-rincon-manabita/foto3.jpeg'
+    ],
   },
   {
     id: 'las-delicias-del-mar',
     nombre: 'Las Delicias del Mar',
     categoria: 'Mariscos',
-    imagenUrl: '/imagenes/placeholder.jpg',
+    imagenUrl: '/imagenes/las-delicias-del-mar/principal.jpeg',
     horario: '11:00 AM - 05:00 PM',
     telefono: '0955555555',
     diasAtencion: ['Viernes', 'Sábado', 'Domingo'],
@@ -120,13 +136,17 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    imagenesExtra: [
+      '/imagenes/las-delicias-del-mar/foto1.jpeg',
+      '/imagenes/las-delicias-del-mar/foto2.jpeg',
+      '/imagenes/las-delicias-del-mar/foto3.jpeg'
+    ],
   },
   {
     id: 'la-esquina-del-sabor',
     nombre: 'La Esquina del Sabor',
     categoria: 'Desayunos',
-    imagenUrl: '/imagenes/placeholder.jpg',
+    imagenUrl: '/imagenes/la-esquina-del-sabor/principal.jpeg',
     horario: '07:30 AM - 11:30 AM',
     telefono: '0944444444',
     diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
@@ -134,6 +154,10 @@ export const locales: Local[] = [
     menuUrl: '#',
     ubicacion: '#',
     instagram: '#',
-    imagenesExtra: [],
+    imagenesExtra: [
+      '/imagenes/la-esquina-del-sabor/foto1.jpeg',
+      '/imagenes/la-esquina-del-sabor/foto2.jpeg',
+      '/imagenes/la-esquina-del-sabor/foto3.jpeg'
+    ],
   },
 ];
