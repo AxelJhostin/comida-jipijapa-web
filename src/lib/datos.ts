@@ -32,9 +32,9 @@ export const locales: Local[] = [
     instagram: '#',
     // ¡AQUÍ ESTÁ LA MODIFICACIÓN IMPORTANTE!
     imagenesExtra: [
-      '/imagenes/pizzeria-don-mario/foto1.jpg',
-      '/imagenes/pizzeria-don-mario/foto2.jpg',
-      '/imagenes/pizzeria-don-mario/foto3.jpg'
+      '/imagenes/pizzeria-don-mario/foto1.jpeg',
+      '/imagenes/pizzeria-don-mario/foto2.jpeg',
+      '/imagenes/pizzeria-don-mario/foto3.jpeg'
     ],
   },
   {
