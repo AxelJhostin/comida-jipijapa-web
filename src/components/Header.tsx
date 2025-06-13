@@ -13,7 +13,7 @@ export default function Header() {
       <nav className="container mx-auto flex items-center justify-between">
         {/* Aquí también aplicamos el color naranja directamente */}
         <Link href="/" className="text-2xl font-bold text-[#F97316]">
-          Sabores de Jipijapa
+          Jipi-Jama
         </Link>
         
         <ul className="hidden md:flex items-center gap-6 text-gray-800 font-medium">

@@ -1,7 +1,9 @@
+// src/app/layout.tsx
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
-import Header from "@/components/Header"; // <- 1. Import añadido
+import Header from "@/components/Header"; 
+import Footer from "@/components/Footer"; // <-- 1. Importamos nuestro nuevo Footer
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -13,9 +15,8 @@ const geistMono = Geist_Mono({
   subsets: ["latin"],
 });
 
-// 2. Metadatos actualizados
 export const metadata: Metadata = {
-  title: "Sabores de Jipijapa",
+  title: "Jipi-Jama", // Nombre actualizado
   description: "El catálogo definitivo de la gastronomía jipijapense.",
 };
 
@@ -25,14 +26,16 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    // 4. Idioma cambiado a "es"
     <html lang="es"> 
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
-        {/* 3. Header añadido aquí */}
         <Header /> 
-        {children}
+        {/* 'flex-grow' hace que el contenido principal ocupe todo el espacio disponible */}
+        <div className="flex-grow">
+          {children}
+        </div>
+        <Footer /> {/* <-- 2. Añadimos el Footer aquí */}
       </body>
     </html>
   );
