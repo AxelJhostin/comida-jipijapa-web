@@ -4,29 +4,24 @@ import { Target, Eye, Rocket } from "lucide-react";
 
 export default function NosotrosPage() {
   return (
-    // CORRECCIÓN: Quitamos el 'bg-gray-50' ya que el fondo 'crema' lo pone globals.css
     <main className="py-16 px-4">
       <div className="container mx-auto max-w-4xl">
 
         <div className="text-center mb-16">
           <h1 className="text-4xl sm:text-5xl font-extrabold">
-            Nuestro Proyecto
+            El Corazón de Jipi-Jama
           </h1>
           <p className="mt-4 text-xl text-[#78716C]">
-            La historia y el corazón detrás de Sabores de Jipijapa.
+            Somos más que un catálogo; somos un movimiento para celebrar y compartir la auténtica sazón de nuestra tierra.
           </p>
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 gap-12 mb-16">
           <SeccionInfo Icono={Target} titulo="Nuestra Misión">
-            Rescatar, promover y celebrar la rica herencia gastronómica de Jipijapa,
-            conectando a los comensales con los auténticos sabores de nuestra tierra
-            a través de una plataforma digital accesible y fácil de usar.
+            Ser el puente digital que conecta a los amantes de la buena comida con los tesoros culinarios, conocidos y por descubrir, de Jipijapa. Facilitamos el acceso a información auténtica y actualizada para enriquecer cada experiencia gastronómica.
           </SeccionInfo>
           <SeccionInfo Icono={Eye} titulo="Nuestra Visión">
-            Ser el referente digital indispensable para el turismo y la cultura
-            gastronómica en la región de Manabí, inspirando a locales y visitantes
-            a explorar y enamorarse de la cocina jipijapense.
+            Convertir a Jipijapa en un destino gastronómico reconocido a nivel nacional, impulsado por la tecnología y el amor a nuestras raíces. Aspiramos a ser la herramienta indispensable que potencie el turismo y la economía local.
           </SeccionInfo>
         </div>
         
@@ -36,12 +31,12 @@ export default function NosotrosPage() {
               <Rocket size={32} />
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-center mb-6">Objetivos Clave</h2>
-          <ul className="list-disc list-inside space-y-3 text-[#78716C] max-w-md mx-auto">
-            <li>Crear el catálogo digital más completo y actualizado de la oferta gastronómica de Jipijapa.</li>
-            <li>Facilitar el descubrimiento de nuevos locales tanto para turistas como para residentes.</li>
-            <li>Impulsar la economía local apoyando a los pequeños y medianos emprendimientos de comida.</li>
-            <li>Ofrecer una herramienta móvil (nuestra App) para una experiencia superior y directa.</li>
+          <h2 className="text-2xl font-bold text-center mb-6">Nuestros Objetivos</h2>
+          <ul className="list-disc list-inside space-y-3 text-[#78716C] max-w-lg mx-auto">
+            <li><strong>Crear el Catálogo Digital Más Completo:</strong> Mapear y mantener actualizada la oferta gastronómica de Jipijapa, desde restaurantes establecidos hasta las huecas más queridas.</li>
+            <li><strong>Facilitar el Descubrimiento:</strong> Ofrecer herramientas de búsqueda y filtros intuitivos para que cada usuario encuentre el plato perfecto para cada ocasión.</li>
+            <li><strong>Impulsar la Economía Local:</strong> Dar visibilidad a los emprendedores gastronómicos, ayudándoles a alcanzar a nuevos clientes y a crecer sus negocios.</li>
+            <li><strong>Promover la Cultura Manabita:</strong> Educar sobre la riqueza y la historia de nuestros platos típicos, convirtiendo cada comida en una experiencia cultural.</li>
           </ul>
         </div>
       </div>
