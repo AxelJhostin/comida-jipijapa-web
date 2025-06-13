@@ -9,57 +9,62 @@ export default function Header() {
   const [menuAbierto, setMenuAbierto] = useState(false);
 
   return (
-    <header className="sticky top-0 w-full bg-white p-4 shadow-md z-50">
+    <header className="sticky top-0 w-full bg-white/80 backdrop-blur-sm p-4 shadow-md z-50">
       <nav className="container mx-auto flex items-center justify-between">
-        {/* Logo o Título del Sitio */}
-        <Link href="/" className="text-2xl font-bold text-blue-600">
+        {/* Aquí también aplicamos el color naranja directamente */}
+        <Link href="/" className="text-2xl font-bold text-[#F97316]">
           Sabores de Jipijapa
         </Link>
         
-        {/* ENLACES PARA PANTALLAS GRANDES (md en adelante) */}
-        <ul className="hidden md:flex items-center gap-6 text-gray-700 font-medium">
+        <ul className="hidden md:flex items-center gap-6 text-gray-800 font-medium">
           <li>
-            <Link href="/" className="hover:text-blue-600 transition-colors">
+            <Link href="/" className="hover:text-[#F97316] transition-colors">
               Catálogo
             </Link>
           </li>
           <li>
-            <Link href="/nosotros" className="hover:text-blue-600 transition-colors">
+            <Link href="/nosotros" className="hover:text-[#F97316] transition-colors">
               Sobre Nosotros
             </Link>
           </li>
           <li>
-            <Link href="/aplicacion" className="bg-blue-600 text-white px-4 py-2 rounded-md hover:bg-blue-700 transition-colors">
+            {/* CORRECCIÓN PRINCIPAL: Usamos los valores de color directos */}
+            <Link 
+              href="/aplicacion" 
+              className="bg-[#F97316] text-white px-4 py-2 rounded-md hover:bg-[#EA580C] transition-colors"
+            >
               Descarga la App
             </Link>
           </li>
         </ul>
 
-        {/* BOTÓN HAMBURGUESA PARA PANTALLAS PEQUEÑAS (visible hasta md) */}
         <div className="md:hidden">
-          <button onClick={() => setMenuAbierto(!menuAbierto)}>
+          <button onClick={() => setMenuAbierto(!menuAbierto)} className="text-gray-800">
             {menuAbierto ? <X size={28} /> : <Menu size={28} />}
           </button>
         </div>
       </nav>
 
-      {/* MENÚ DESPLEGABLE PARA MÓVIL */}
-      {/* Solo se muestra si menuAbierto es true */}
+      {/* Menú desplegable para móvil */}
       {menuAbierto && (
-        <div className="md:hidden mt-4">
-          <ul className="flex flex-col items-center gap-4">
+        <div className="md:hidden mt-4 bg-white">
+          <ul className="flex flex-col items-center gap-4 py-4">
             <li>
-              <Link href="/" onClick={() => setMenuAbierto(false)} className="text-gray-700 font-medium hover:text-blue-600 transition-colors">
+              <Link href="/" onClick={() => setMenuAbierto(false)} className="text-gray-800 font-medium hover:text-[#F97316] transition-colors">
                 Catálogo
               </Link>
             </li>
             <li>
-              <Link href="/nosotros" onClick={() => setMenuAbierto(false)} className="text-gray-700 font-medium hover:text-blue-600 transition-colors">
+              <Link href="/nosotros" onClick={() => setMenuAbierto(false)} className="text-gray-800 font-medium hover:text-[#F97316] transition-colors">
                 Sobre Nosotros
               </Link>
             </li>
             <li>
-              <Link href="/aplicacion" onClick={() => setMenuAbierto(false)} className="mt-2 bg-blue-600 text-white px-6 py-2 rounded-md hover:bg-blue-700 transition-colors">
+              <Link 
+                href="/aplicacion" 
+                onClick={() => setMenuAbierto(false)} 
+                className="mt-2 bg-[#F97316] text-white px-6 py-2 rounded-md hover:bg-[#EA580C] transition-colors"
+              >
                 Descarga la App
               </Link>
             </li>

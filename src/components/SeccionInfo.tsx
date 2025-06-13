@@ -10,11 +10,14 @@ interface SeccionInfoProps {
 export default function SeccionInfo({ Icono, titulo, children }: SeccionInfoProps) {
   return (
     <div className="bg-white p-8 rounded-lg shadow-lg text-center flex flex-col items-center">
-      <div className="bg-blue-100 text-blue-600 rounded-full p-4 mb-4">
+      {/* CORRECCIÓN: Usamos un fondo y color de icono naranja */}
+      <div className="bg-orange-100 text-[#F97316] rounded-full p-4 mb-4">
         <Icono size={32} />
       </div>
-      <h2 className="text-2xl font-bold text-gray-800 mb-2">{titulo}</h2>
-      <p className="text-gray-600 leading-relaxed">
+      {/* El título usará el color de texto principal definido en globals.css */}
+      <h2 className="text-2xl font-bold mb-2">{titulo}</h2>
+      {/* El párrafo usará un color de texto secundario y más claro */}
+      <p className="text-[#78716C] leading-relaxed">
         {children}
       </p>
     </div>
