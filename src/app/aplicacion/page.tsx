@@ -1,71 +1,94 @@
 // src/app/aplicacion/page.tsx
 import Image from "next/image";
-
-const IconoCaracteristica = ({ children }: { children: React.ReactNode }) => (
-  <div className="bg-orange-100 text-[#F97316] rounded-full h-12 w-12 flex items-center justify-center mb-4">
-    {children}
-  </div>
-);
+import { CheckCircle } from "lucide-react"; 
 
 export default function AplicacionPage() {
+  const caracteristicas = [
+    "Búsqueda y filtros avanzados para encontrar tu antojo perfecto.",
+    "Galerías de imágenes interactivas para cada local.",
+    "Acceso con un toque para llamar, ver en el mapa o contactar por WhatsApp.",
+    "Información detallada: horarios, días de atención y más.",
+    "Notificaciones sobre promociones y nuevos locales (¡Próximamente!)."
+  ];
+
   return (
     <main>
-      <section className="text-center py-20 px-4 bg-white">
-        <Image 
-          src="/logo.png" // Reutilizamos tu logo
-          alt="Logo de Jipi-Jama"
-          width={120}
-          height={120}
-          className="mx-auto mb-6"
-        />
-        <h1 className="text-4xl sm:text-5xl font-extrabold">
-          Lleva a Jipijapa en tu Bolsillo
-        </h1>
-        <p className="mt-4 text-xl text-[#78716C] max-w-2xl mx-auto">
-          Descarga la aplicación gratuita de Jipi-Jama y accede a la guía gastronómica más completa desde cualquier lugar. La mejor experiencia, optimizada para tu móvil.
-        </p>
-        <a 
-          href="#" // Aquí irá el enlace real a la Google Play Store
-          className="mt-8 inline-block bg-[#F97316] text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-[#EA580C] transition-transform hover:scale-105"
-        >
-          Disponible en Google Play
-        </a>
+      {/* Sección Principal (Hero) con Mockup de Teléfono */}
+      <section className="bg-white">
+        <div className="container mx-auto grid md:grid-cols-2 gap-8 items-center py-20 px-4">
+          <div className="text-center md:text-left">
+            <span className="text-naranja-principal font-bold uppercase">La Experiencia Completa</span>
+            <h1 className="text-4xl sm:text-5xl font-extrabold mt-2">
+              Lleva a Jipijapa en tu Bolsillo
+            </h1>
+            <p className="mt-4 text-xl text-texto-secundario">
+              Descarga la aplicación gratuita de Jipi-Jama y accede a la guía gastronómica más completa. La mejor experiencia, optimizada para tu móvil.
+            </p>
+            <a 
+              href="#" // Enlace real a la Google Play Store
+              className="mt-8 inline-block bg-[#F97316] text-white font-bold text-lg px-8 py-3 rounded-lg hover:bg-[#EA580C] transition-transform hover:scale-105"
+            >
+              Disponible en Google Play
+            </a>
+          </div>
+          <div className="flex justify-center">
+            {/* CORRECCIÓN: Usamos la vista del catálogo, que es más representativa */}
+            <Image 
+              src="/imagenes/app/app-vista-catalogo.jpg"
+              alt="Captura de pantalla de la lista de locales en la app Jipi-Jama"
+              width={280}
+              height={560}
+              className="rounded-3xl shadow-2xl border-4 border-gray-200"
+            />
+          </div>
+        </div>
       </section>
 
+      {/* Sección de "Por qué descargar" con tus capturas */}
       <section className="py-20 px-4">
-        <h2 className="text-3xl font-bold text-center mb-12">Una Experiencia Superior</h2>
-        <div className="container mx-auto grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+        <div className="container mx-auto">
+          <div className="text-center mb-16">
+            <h2 className="text-3xl font-bold">La Guía Definitiva en tus Manos</h2>
+            <p className="mt-2 text-lg text-texto-secundario max-w-2xl mx-auto">
+              Diseñada desde cero para ser tu compañera ideal al explorar la rica gastronomía de nuestra ciudad.
+            </p>
+          </div>
           
-          <div className="flex flex-col items-center">
-            <IconoCaracteristica>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"></path><circle cx="12" cy="10" r="3"></circle></svg>
-            </IconoCaracteristica>
-            <h3 className="text-xl font-semibold mb-2">Mapas y Navegación</h3>
-            <p className="text-[#78716C]">
-              Obtén la ruta exacta a cualquier local con un solo toque, integrándonos con tu aplicación de mapas preferida.
-            </p>
+          <div className="grid md:grid-cols-3 gap-10">
+            {/* COLUMNA 1: Usa la vista del catálogo */}
+            <div className="text-center">
+              <Image src="/imagenes/app/app-vista-catalogo.jpg" alt="Vista del catálogo de locales" width={250} height={500} className="rounded-2xl shadow-lg mx-auto border-2 border-gray-100"/>
+              <h3 className="font-bold text-xl mt-4">Explora y Descubre</h3>
+              <p className="text-texto-secundario mt-1">Navega por un catálogo visual y completo. Tu próxima comida favorita está a un scroll de distancia.</p>
+            </div>
+            {/* COLUMNA 2: Usa la vista de un restaurante específico */}
+            <div className="text-center">
+              <Image src="/imagenes/app/app-vista-detalle.jpg" alt="Vista del detalle de un restaurante" width={250} height={500} className="rounded-2xl shadow-lg mx-auto border-2 border-gray-100"/>
+              <h3 className="font-bold text-xl mt-4">Toda la Información</h3>
+              <p className="text-texto-secundario mt-1">Horarios, menús, galerías y más. Toda la información que necesitas para tomar la mejor decisión.</p>
+            </div>
+            {/* COLUMNA 3: Usa la vista del logo */}
+            <div className="text-center">
+              <Image src="/imagenes/app/app-vista-logo.jpg" alt="Pantalla de bienvenida de la app" width={250} height={500} className="rounded-2xl shadow-lg mx-auto border-2 border-gray-100"/>
+              <h3 className="font-bold text-xl mt-4">Diseño Profesional</h3>
+              <p className="text-texto-secundario mt-1">Una aplicación nativa, rápida y con una identidad visual única que celebra la cultura de Jipijapa.</p>
+            </div>
           </div>
+        </div>
+      </section>
 
-          <div className="flex flex-col items-center">
-            <IconoCaracteristica>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M18 8A6 6 0 0 0 6 8c0 7-3 9-3 9h18s-3-2-3-9"></path><path d="M13.73 21a2 2 0 0 1-3.46 0"></path></svg>
-            </IconoCaracteristica>
-            <h3 className="text-xl font-semibold mb-2">Notificaciones Exclusivas</h3>
-            <p className="text-[#78716C]">
-              Sé el primero en enterarte de promociones, nuevos platos y eventos especiales de tus restaurantes favoritos.
-            </p>
-          </div>
-
-          <div className="flex flex-col items-center">
-            <IconoCaracteristica>
-              <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round"><path d="M2 12h20M12 2a10 10 0 1 1 0 20 10 10 0 0 1 0-20z"></path></svg>
-            </IconoCaracteristica>
-            <h3 className="text-xl font-semibold mb-2">Acceso Offline</h3>
-            <p className="text-[#78716C]">
-              Consulta la información esencial de los locales incluso cuando no tengas una conexión a internet estable.
-            </p>
-          </div>
-
+      {/* Sección de Lista de Características (sin cambios) */}
+      <section className="py-20 px-4 bg-white">
+        <div className="container mx-auto max-w-3xl">
+          <h2 className="text-3xl font-bold text-center mb-12">Todas las Funcionalidades</h2>
+          <ul className="space-y-4">
+            {caracteristicas.map((item, index) => (
+              <li key={index} className="flex items-start gap-3">
+                <CheckCircle className="text-green-500 mt-1 flex-shrink-0" size={20} />
+                <span className="text-lg">{item}</span>
+              </li>
+            ))}
+          </ul>
         </div>
       </section>
     </main>
