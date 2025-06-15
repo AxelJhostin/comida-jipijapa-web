@@ -1,4 +1,5 @@
 // src/app/locales/[id]/page.tsx
+// otro intento 1
 import { locales } from "@/lib/datos";
 import { notFound } from "next/navigation";
 import { MapPin, Phone, Clock, Calendar, Instagram, ExternalLink, MessageCircle } from "lucide-react";
