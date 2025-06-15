@@ -3,7 +3,8 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Local } from '@/lib/datos';
 import { motion } from 'framer-motion';
-import { ArrowRight } from 'lucide-react'; // 1. Importamos el icono de flecha
+// 1. Importamos el nuevo icono 'MapPin'
+import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react'; 
 
 export default function TarjetaLocal({ local }: { local: Local }) {
   
@@ -17,10 +18,8 @@ export default function TarjetaLocal({ local }: { local: Local }) {
   };
 
   return (
-    // Toda la tarjeta sigue siendo un enlace para mejor accesibilidad
     <Link href={`/locales/${local.id}`} className="block group">
       <motion.div 
-        // 2. Le decimos al contenedor que sea un flex-col para posicionar el botón abajo
         className="overflow-hidden rounded-lg bg-white shadow-md h-full flex flex-col"
         variants={cardVariants}
         initial="hidden"
@@ -37,24 +36,40 @@ export default function TarjetaLocal({ local }: { local: Local }) {
           />
         </div>
         
-        {/* 3. El contenedor del texto ahora crece para ocupar el espacio disponible */}
         <div className="p-4 flex-grow flex flex-col">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-[#F97316]">
+            <span className="text-xs font-semibold uppercase tracking-wider text-naranja-principal">
               {local.categoria}
             </span>
             <h2 className="mt-1 text-xl font-bold truncate">
               {local.nombre}
             </h2>
-            <p className="mt-2 text-sm text-[#78716C]">
-              {local.direccionFisica}
-            </p>
+            
+            {/* --- SECCIÓN DE INFORMACIÓN ACTUALIZADA --- */}
+            <div className="mt-4 space-y-2 text-sm text-texto-secundario">
+              {/* 2. Añadimos el icono de ubicación y lo ponemos en un flex container */}
+              <div className="flex items-center gap-2">
+                <MapPin size={16} className="text-naranja-principal" />
+                <span>{local.direccionFisica}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                {/* 3. Cambiamos el color del icono a nuestro naranja principal */}
+                <Clock size={16} className="text-naranja-principal" />
+                <span>{local.horario}</span>
+              </div>
+              <div className="flex items-center gap-2">
+                {/* 4. Cambiamos el color del icono a nuestro naranja principal */}
+                <Calendar size={16} className="text-naranja-principal" />
+                <span>{local.diasAtencion.slice(0, 3).join(', ')}...</span>
+              </div>
+            </div>
+            {/* --- FIN DE LA SECCIÓN --- */}
+
           </div>
           
-          {/* 4. AQUÍ ESTÁ EL NUEVO BOTÓN */}
           <div className="mt-4 pt-4 border-t border-gray-200">
             <div 
-              className="inline-flex items-center gap-2 text-[#F97316] font-semibold group-hover:gap-3 transition-all duration-300"
+              className="inline-flex items-center gap-2 text-naranja-principal font-semibold group-hover:gap-3 transition-all duration-300"
             >
               Ver Detalles
               <ArrowRight size={16} />
