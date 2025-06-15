@@ -51,7 +51,7 @@ export default function Header() {
           <ul className="flex flex-col items-center gap-4 py-4">
             <li>
               <Link href="/" onClick={() => setMenuAbierto(false)} className="text-gray-800 font-medium hover:text-[#F97316] transition-colors">
-                Catálogo
+                Restaurantes
               </Link>
             </li>
             <li>
