@@ -19,7 +19,7 @@ export default function Header() {
         <ul className="hidden md:flex items-center gap-6 text-gray-800 font-medium">
           <li>
             <Link href="/" className="hover:text-[#F97316] transition-colors">
-              Catálogo
+              Restaurantes
             </Link>
           </li>
           <li>
