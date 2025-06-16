@@ -19,6 +19,12 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: "Jipi-Jama",
   description: "El catálogo definitivo de la gastronomía jipijapense.",
+  keywords: ['...'],
+  openGraph: { /* ... */ },
+  // AÑADE ESTA NUEVA SECCIÓN:
+  verification: {
+    google: process.env.NEXT_PUBLIC_GOOGLE_SITE_VERIFICATION,
+  },
 };
 
 export default function RootLayout({
