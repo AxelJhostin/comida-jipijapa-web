@@ -10,6 +10,7 @@ const geistSans = Geist({
   variable: "--font-geist-sans",
   subsets: ["latin"],
 });
+//cosas para mandar git
 
 const geistMono = Geist_Mono({
   variable: "--font-geist-mono",
