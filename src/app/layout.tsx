@@ -3,7 +3,8 @@ import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/Header"; 
-import Footer from "@/components/Footer"; // <-- 1. Importamos nuestro nuevo Footer
+import Footer from "@/components/Footer";
+import GoogleAnalytics from "@/components/GoogleAnalytics"; // <-- 1. Importamos nuestro nuevo componente
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -16,7 +17,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Jipi-Jama", // Nombre actualizado
+  title: "Jipi-Jama",
   description: "El catálogo definitivo de la gastronomía jipijapense.",
 };
 
@@ -30,12 +31,14 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased flex flex-col min-h-screen`}
       >
+        {/* 2. Añadimos el componente de Analytics aquí */}
+        <GoogleAnalytics />
+        
         <Header /> 
-        {/* 'flex-grow' hace que el contenido principal ocupe todo el espacio disponible */}
         <div className="flex-grow">
           {children}
         </div>
-        <Footer /> {/* <-- 2. Añadimos el Footer aquí */}
+        <Footer />
       </body>
     </html>
   );
