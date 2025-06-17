@@ -44,8 +44,8 @@ export default function Home() {
         <Image
           src="/logo.png" // Busca el logo que pusiste en la carpeta 'public'
           alt="Logo de Jipi-Jama"
-          width={150}
-          height={150}
+          width={200}
+          height={200}
           priority // Le dice a Next.js que cargue esta imagen primero
         />
 
