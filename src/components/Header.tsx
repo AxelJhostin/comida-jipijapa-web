@@ -11,7 +11,6 @@ export default function Header() {
   return (
     <header className="sticky top-0 w-full bg-white/80 backdrop-blur-sm p-4 shadow-md z-50">
       <nav className="container mx-auto flex items-center justify-between">
-        {/* Aquí también aplicamos el color naranja directamente */}
         <Link href="/" className="text-2xl font-bold text-[#F97316]">
           Jipi-Jama
         </Link>
@@ -22,13 +21,18 @@ export default function Header() {
               Restaurantes
             </Link>
           </li>
+          {/* AQUÍ ESTÁ EL NUEVO ENLACE AL MAPA */}
+          <li>
+            <Link href="/mapa" className="hover:text-[#F97316] transition-colors">
+              Mapa
+            </Link>
+          </li>
           <li>
             <Link href="/nosotros" className="hover:text-[#F97316] transition-colors">
               Sobre Nosotros
             </Link>
           </li>
           <li>
-            {/* CORRECCIÓN PRINCIPAL: Usamos los valores de color directos */}
             <Link 
               href="/aplicacion" 
               className="bg-[#F97316] text-white px-4 py-2 rounded-md hover:bg-[#EA580C] transition-colors"
@@ -52,6 +56,12 @@ export default function Header() {
             <li>
               <Link href="/" onClick={() => setMenuAbierto(false)} className="text-gray-800 font-medium hover:text-[#F97316] transition-colors">
                 Restaurantes
+              </Link>
+            </li>
+            {/* Y AQUÍ ESTÁ EL NUEVO ENLACE EN EL MENÚ MÓVIL */}
+            <li>
+              <Link href="/mapa" onClick={() => setMenuAbierto(false)} className="text-gray-800 font-medium hover:text-[#F97316] transition-colors">
+                Mapa
               </Link>
             </li>
             <li>
