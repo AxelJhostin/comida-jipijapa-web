@@ -3,7 +3,6 @@ import Image from 'next/image';
 import Link from 'next/link';
 import type { Local } from '@/lib/datos';
 import { motion } from 'framer-motion';
-// 1. Importamos el nuevo icono 'MapPin'
 import { ArrowRight, Calendar, Clock, MapPin } from 'lucide-react'; 
 
 export default function TarjetaLocal({ local }: { local: Local }) {
@@ -20,7 +19,8 @@ export default function TarjetaLocal({ local }: { local: Local }) {
   return (
     <Link href={`/locales/${local.id}`} className="block group">
       <motion.div 
-        className="overflow-hidden rounded-lg bg-white shadow-md h-full flex flex-col"
+        // 1. Añadimos un fondo oscuro para la tarjeta en dark mode
+        className="overflow-hidden rounded-lg bg-white dark:bg-gray-800 shadow-md h-full flex flex-col"
         variants={cardVariants}
         initial="hidden"
         whileInView="visible"
@@ -38,38 +38,35 @@ export default function TarjetaLocal({ local }: { local: Local }) {
         
         <div className="p-4 flex-grow flex flex-col">
           <div>
-            <span className="text-xs font-semibold uppercase tracking-wider text-naranja-principal">
+            <span className="text-xs font-semibold uppercase tracking-wider text-[#F97316]">
               {local.categoria}
             </span>
-            <h2 className="mt-1 text-xl font-bold truncate">
+            {/* 2. Añadimos un color de texto claro para el nombre en dark mode */}
+            <h2 className="mt-1 text-xl font-bold truncate dark:text-gray-100">
               {local.nombre}
             </h2>
             
-            {/* --- SECCIÓN DE INFORMACIÓN ACTUALIZADA --- */}
-            <div className="mt-4 space-y-2 text-sm text-texto-secundario">
-              {/* 2. Añadimos el icono de ubicación y lo ponemos en un flex container */}
+            {/* 3. Añadimos un color más claro para la info secundaria en dark mode */}
+            <div className="mt-4 space-y-2 text-sm text-[#78716C] dark:text-gray-400">
               <div className="flex items-center gap-2">
-                <MapPin size={16} className="text-naranja-principal" />
+                <MapPin size={16} className="text-[#F97316]" />
                 <span>{local.direccionFisica}</span>
               </div>
               <div className="flex items-center gap-2">
-                {/* 3. Cambiamos el color del icono a nuestro naranja principal */}
-                <Clock size={16} className="text-naranja-principal" />
+                <Clock size={16} className="text-[#F97316]" />
                 <span>{local.horario}</span>
               </div>
               <div className="flex items-center gap-2">
-                {/* 4. Cambiamos el color del icono a nuestro naranja principal */}
-                <Calendar size={16} className="text-naranja-principal" />
+                <Calendar size={16} className="text-[#F97316]" />
                 <span>{local.diasAtencion.slice(0, 3).join(', ')}...</span>
               </div>
             </div>
-            {/* --- FIN DE LA SECCIÓN --- */}
-
           </div>
           
-          <div className="mt-4 pt-4 border-t border-gray-200">
+          {/* 4. Cambiamos el color del borde superior en dark mode */}
+          <div className="mt-4 pt-4 border-t border-gray-200 dark:border-gray-700">
             <div 
-              className="inline-flex items-center gap-2 text-naranja-principal font-semibold group-hover:gap-3 transition-all duration-300"
+              className="inline-flex items-center gap-2 text-[#F97316] font-semibold group-hover:gap-3 transition-all duration-300"
             >
               Ver Detalles
               <ArrowRight size={16} />

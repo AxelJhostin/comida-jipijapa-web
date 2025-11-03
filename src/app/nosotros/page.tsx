@@ -8,10 +8,11 @@ export default function NosotrosPage() {
       <div className="container mx-auto max-w-4xl">
 
         <div className="text-center mb-16">
-          <h1 className="text-4xl sm:text-5xl font-extrabold">
+          {/* CORRECCIÓN: Añadimos colores para modo oscuro */}
+          <h1 className="text-4xl sm:text-5xl font-extrabold text-texto-principal dark:text-crema">
             El Corazón de Jipi-Jama
           </h1>
-          <p className="mt-4 text-xl text-[#78716C]">
+          <p className="mt-4 text-xl text-texto-secundario dark:text-gray-400">
             Somos más que un catálogo; somos un movimiento para celebrar y compartir la auténtica sazón de nuestra tierra.
           </p>
         </div>
@@ -25,18 +26,18 @@ export default function NosotrosPage() {
           </SeccionInfo>
         </div>
         
-        <div className="bg-white p-8 rounded-lg shadow-lg">
+        <div className="bg-white dark:bg-gray-800 p-8 rounded-lg shadow-lg">
           <div className="flex justify-center mb-4">
-            <div className="bg-orange-100 text-[#F97316] rounded-full p-4">
+            <div className="bg-orange-100 text-naranja-principal rounded-full p-4">
               <Rocket size={32} />
             </div>
           </div>
-          <h2 className="text-2xl font-bold text-center mb-6">Nuestros Objetivos</h2>
-          <ul className="list-disc list-inside space-y-3 text-[#78716C] max-w-lg mx-auto">
-            <li><strong>Crear el Catálogo Digital Más Completo:</strong> Mapear y mantener actualizada la oferta gastronómica de Jipijapa, desde restaurantes establecidos hasta las huecas más queridas.</li>
-            <li><strong>Facilitar el Descubrimiento:</strong> Ofrecer herramientas de búsqueda y filtros intuitivos para que cada usuario encuentre el plato perfecto para cada ocasión.</li>
-            <li><strong>Impulsar la Economía Local:</strong> Dar visibilidad a los emprendedores gastronómicos, ayudándoles a alcanzar a nuevos clientes y a crecer sus negocios.</li>
-            <li><strong>Promover la Cultura Manabita:</strong> Educar sobre la riqueza y la historia de nuestros platos típicos, convirtiendo cada comida en una experiencia cultural.</li>
+          <h2 className="text-2xl font-bold text-center mb-6 text-texto-principal dark:text-crema">Nuestros Objetivos</h2>
+          <ul className="list-disc list-inside space-y-3 text-texto-secundario dark:text-gray-400 max-w-lg mx-auto">
+            <li><strong>Crear el Catálogo Digital Más Completo:</strong> Mapear y mantener actualizada la oferta gastronómica de Jipijapa.</li>
+            <li><strong>Facilitar el Descubrimiento:</strong> Ofrecer herramientas de búsqueda y filtros intuitivos para que cada usuario encuentre el plato perfecto.</li>
+            <li><strong>Impulsar la Economía Local:</strong> Dar visibilidad a los emprendedores gastronómicos, ayudándoles a alcanzar a nuevos clientes.</li>
+            <li><strong>Promover la Cultura Manabita:</strong> Educar sobre la riqueza y la historia de nuestros platos típicos.</li>
           </ul>
         </div>
       </div>

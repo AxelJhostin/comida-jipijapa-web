@@ -1,6 +1,6 @@
 // src/components/Footer.tsx
 import Link from 'next/link';
-import { Instagram } from 'lucide-react'; // Importamos el icono que vamos a usar
+import { Instagram } from 'lucide-react';
 
 export default function Footer() {
   return (
