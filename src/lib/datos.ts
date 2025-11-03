@@ -21,6 +21,7 @@ export interface Local {
 
 // 2. La lista completa de locales, ahora todos con coordenadas.
 export const locales: Local[] = [
+  // --- LOCALES DE EJEMPLO QUE YA TENÍAS ---
   {
     id: 'pizzeria-don-mario',
     nombre: 'Pizzería Don Mario',
@@ -165,4 +166,119 @@ export const locales: Local[] = [
     ],
     coordenadas: { lat: -1.3475, lng: -80.5805 },
   },
+
+  // --- ⬇️ INICIO DE LOS 6 LOCALES NUEVOS CON DATOS REALES Y FICTICIOS ⬇️ ---
+  {
+    id: 'cevicheria-overtime',
+    nombre: 'Cevichería Overtime', // Dato real (inferido)
+    categoria: 'Mariscos', // <-- DATO FALSO (inferido)
+    imagenUrl: '/imagenes/cevicheria-overtime/logo.jpg', // Dato de tu captura
+    horario: '10:00 AM - 06:00 PM', // <-- DATO FALSO
+    telefono: '052600617', // Dato real
+    diasAtencion: ['Lunes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    direccionFisica: 'MC3F+2HV, 10 de Agosto, Jipijapa', // Dato real
+    menuUrl: '#', // <-- DATO FALSO (placeholder)
+    instagram: 'https://www.instagram.com/overtime.cevicheria', // Dato real
+    imagenesExtra: [ // Datos de tu captura
+      '/imagenes/cevicheria-overtime/comida1.jpg',
+      '/imagenes/cevicheria-overtime/comida2.jpg',
+      '/imagenes/cevicheria-overtime/comida3.jpg',
+      '/imagenes/cevicheria-overtime/comida4.jpg',
+      '/imagenes/cevicheria-overtime/comida5.jpg',
+    ],
+    coordenadas: { lat: -1.3474, lng: -80.5785 }, // <-- DATO FALSO (aprox.)
+  },
+  {
+    id: 'parrillada-edward',
+    nombre: 'Parrillada Edward', // Dato real (inferido)
+    categoria: 'Parrillada', // <-- DATO FALSO (inferido)
+    imagenUrl: '/imagenes/parrillada-edward/edward-logo.jpg', // Dato de tu captura
+    horario: '05:00 PM - 11:00 PM', // <-- DATO FALSO
+    telefono: '0987040472', // Dato real
+    diasAtencion: ['Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    direccionFisica: 'Bolivar y, C. Guayas, Jipijapa 130301', // Dato real
+    menuUrl: '#', // <-- DATO FALSO (placeholder)
+    instagram: 'https://www.instagram.com/parrilladaedward', // Dato real
+    imagenesExtra: [ // Datos de tu captura
+      '/imagenes/parrillada-edward/comida1.jpg',
+      '/imagenes/parrillada-edward/comida2.jpg',
+      '/imagenes/parrillada-edward/comida3.jpg',
+      '/imagenes/parrillada-edward/comida4.jpg',
+      '/imagenes/parrillada-edward/comida5.jpg',
+    ],
+    coordenadas: { lat: -1.3480, lng: -80.5790 }, // <-- DATO FALSO (aprox.)
+  },
+  {
+    id: 'luister-maloso',
+    nombre: 'Luister Maloso', // Dato real (inferido)
+    categoria: 'Comida Rápida', // <-- DATO FALSO (inferido)
+    imagenUrl: '/imagenes/luister-maloso/principal.jpg', // <-- DATO FALSO (ruta inventada)
+    horario: '06:00 PM - 11:30 PM', // <-- DATO FALSO
+    telefono: '0984540603', // Dato real
+    diasAtencion: ['Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    direccionFisica: 'Rocafuerte entre Febres Cordero, y, Jipijapa 130301', // Dato real
+    menuUrl: '#', // <-- DATO FALSO (placeholder)
+    instagram: 'https://www.instagram.com/luistermaloso', // Dato real
+    imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
+      '/imagenes/luister-maloso/foto1.jpg',
+      '/imagenes/luister-maloso/foto2.jpg',
+      '/imagenes/luister-maloso/foto3.jpg'
+    ],
+    coordenadas: { lat: -1.3490, lng: -80.5810 }, // <-- DATO FALSO (aprox.)
+  },
+  {
+    id: 'raspados-restaurante',
+    nombre: 'Raspados Restaurante', // Dato real (inferido)
+    categoria: 'Tradicional', // <-- DATO FALSO (inferido)
+    imagenUrl: '/imagenes/raspados-restaurante/principal.jpg', // <-- DATO FALSO (ruta inventada)
+    horario: '09:00 AM - 05:00 PM', // <-- DATO FALSO
+    telefono: '0978780863', // Dato real
+    diasAtencion: ['Sábado', 'Domingo'], // <-- DATO FALSO
+    direccionFisica: 'Jipijapa Cdla. Parrales Iguale Calles, y H. Vasquez Esquina, Jipijapa 130305', // Dato real
+    menuUrl: '#', // <-- DATO FALSO (placeholder)
+    instagram: 'https://www.instagram.com/raspadosrestaurante', // Dato real
+    imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
+      '/imagenes/raspados-restaurante/foto1.jpg',
+      '/imagenes/raspados-restaurante/foto2.jpg',
+      '/imagenes/raspados-restaurante/foto3.jpg'
+    ],
+    coordenadas: { lat: -1.3515, lng: -80.5800 }, // <-- DATO FALSO (aprox.)
+  },
+  {
+    id: 'sanduchito',
+    nombre: 'Sanduchito 593', // Dato real (tomado del Instagram)
+    categoria: 'Comida Rápida', // <-- DATO FALSO (inferido)
+    imagenUrl: '/imagenes/sanduchito/principal.jpg', // <-- DATO FALSO (ruta inventada)
+    horario: '07:00 PM - 12:00 AM', // <-- DATO FALSO
+    telefono: '0978957741', // Dato real
+    diasAtencion: ['Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    direccionFisica: 'JCX9+FWX, Avenida Alejo Lascano, Jipijapa', // Dato real
+    menuUrl: '#', // <-- DATO FALSO (placeholder)
+    instagram: 'https://www.instagram.com/sanduchito_593', // Dato real
+    imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
+      '/imagenes/sanduchito/foto1.jpg',
+      '/imagenes/sanduchito/foto2.jpg',
+      '/imagenes/sanduchito/foto3.jpg'
+    ],
+    coordenadas: { lat: -1.3512, lng: -80.5802 }, // <-- DATO FALSO (aprox.)
+  },
+  {
+    id: 'cevicheria-el-refugio',
+    nombre: 'Cevichería El Refugio', // Dato real (inferido)
+    categoria: 'Mariscos', // <-- DATO FALSO (inferido)
+    imagenUrl: '/imagenes/cevicheria-el-refugio/principal.jpg', // <-- DATO FALSO (ruta inventada)
+    horario: '09:30 AM - 04:30 PM', // <-- DATO FALSO
+    telefono: '0993196769', // Dato real
+    diasAtencion: ['Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    direccionFisica: 'JCXC+J7W, Jipijapa', // Dato real
+    menuUrl: '#', // <-- DATO FALSO (placeholder)
+    instagram: 'https://www.instagram.com/cevicheria_el_refugio', // Dato real
+    imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
+      '/imagenes/cevicheria-el-refugio/foto1.jpg',
+      '/imagenes/cevicheria-el-refugio/foto2.jpg',
+      '/imagenes/cevicheria-el-refugio/foto3.jpg'
+    ],
+    coordenadas: { lat: -1.3508, lng: -80.5793 }, // <-- DATO FALSO (aprox.)
+  },
+  // --- ⬆️ FIN DE LOS 6 LOCALES NUEVOS ⬆️ ---
 ];
