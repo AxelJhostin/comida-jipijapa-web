@@ -236,7 +236,7 @@ export const locales: Local[] = [
   },
   {
     id: 'rollwings',
-    nombre: 'Asadero El Toro',
+    nombre: 'Rollwings',
     categoria: 'Parrillada',
     imagenUrl: '/imagenes/rollwings/logo.PNG', 
     horario: '04:00 PM - 11:00 PM',
