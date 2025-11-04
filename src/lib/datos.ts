@@ -17,268 +17,338 @@ export interface Local {
     lat: number;
     lng: number;
   };
+  ubicacionUrl: string;
 }
 
 // 2. La lista completa de locales, ahora todos con coordenadas.
 export const locales: Local[] = [
-  // --- LOCALES DE EJEMPLO QUE YA TENÍAS ---
-  {
-    id: 'pizzeria-don-mario',
-    nombre: 'Pizzería Don Mario',
-    categoria: 'Pizzería',
-    imagenUrl: '/imagenes/pizzeria-don-mario/principal.jpg',
-    horario: '12:00 PM - 10:00 PM',
-    telefono: '0987654321',
-    diasAtencion: ['Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
-    direccionFisica: 'Av. Principal y calle 10, Jipijapa',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/pizzeria-don-mario/foto1.jpeg',
-      '/imagenes/pizzeria-don-mario/foto2.jpeg',
-      '/imagenes/pizzeria-don-mario/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.3484, lng: -80.5847 },
-  },
-  {
-    id: 'el-buen-gusto',
-    nombre: 'Pollo a la Brasa El Buen Gusto',
-    categoria: 'Parrillada',
-    imagenUrl: '/imagenes/el-buen-gusto/principal.jpeg',
-    horario: '11:00 AM - 9:00 PM',
-    telefono: '0976543210',
-    diasAtencion: ['Martes', 'Jueves', 'Viernes', 'Domingo'],
-    direccionFisica: 'Av. Alejo Lascano y Calle Sucre',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/el-buen-gusto/foto1.jpeg',
-      '/imagenes/el-buen-gusto/foto2.jpeg',
-      '/imagenes/el-buen-gusto/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.3501, lng: -80.5795 },
-  },
-  {
-    id: 'los-corviches-de-la-abuela',
-    nombre: 'Los Corviches de la Abuela',
-    categoria: 'Tradicional',
-    imagenUrl: '/imagenes/los-corviches-de-la-abuela/principal.jpg',
-    horario: '08:00 AM - 01:00 PM',
-    telefono: '0999999999',
-    diasAtencion: ['Viernes', 'Sábado', 'Domingo'],
-    direccionFisica: 'Parque Central, frente a la iglesia',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/los-corviches-de-la-abuela/foto1.jpeg',
-      '/imagenes/los-corviches-de-la-abuela/foto2.jpeg',
-      '/imagenes/los-corviches-de-la-abuela/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.3495, lng: -80.5780 },
-  },
-  {
-    id: 'cafe-del-valle',
-    nombre: 'Café del Valle',
-    categoria: 'Cafetería',
-    imagenUrl: '/imagenes/cafe-del-valle/principal.jpg',
-    horario: '09:00 AM - 08:00 PM',
-    telefono: '0988888888',
-    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes'],
-    direccionFisica: 'Calle Bolívar, a media cuadra del municipio',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/cafe-del-valle/foto1.jpeg',
-      '/imagenes/cafe-del-valle/foto2.jpeg',
-      '/imagenes/cafe-del-valle/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.3488, lng: -80.5792 },
-  },
-  {
-    id: 'super-hamburguesas',
-    nombre: 'Super Hamburguesas',
-    categoria: 'Comida Rápida',
-    imagenUrl: '/imagenes/super-hamburguesas/principal.jpg',
-    horario: '06:00 PM - 11:00 PM',
-    telefono: '0977777777',
-    diasAtencion: ['Jueves', 'Viernes', 'Sábado', 'Domingo'],
-    direccionFisica: 'Sector Terminal Terrestre',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/super-hamburguesas/foto1.jpeg',
-      '/imagenes/super-hamburguesas/foto2.jpeg',
-      '/imagenes/super-hamburguesas/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.3525, lng: -80.5830 },
-  },
-  {
-    id: 'el-rincon-manabita',
-    nombre: 'El Rincón Manabita',
-    categoria: 'Tradicional',
-    imagenUrl: '/imagenes/el-rincon-manabita/principal.jpg',
-    horario: '12:00 PM - 04:00 PM',
-    telefono: '0966666666',
-    diasAtencion: ['Sábado', 'Domingo'],
-    direccionFisica: 'Vía a Noboa, Km 2',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/el-rincon-manabita/foto1.jpeg',
-      '/imagenes/el-rincon-manabita/foto2.jpeg',
-      '/imagenes/el-rincon-manabita/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.3600, lng: -80.5900 },
-  },
-  {
-    id: 'las-delicias-del-mar',
-    nombre: 'Las Delicias del Mar',
-    categoria: 'Mariscos',
-    imagenUrl: '/imagenes/las-delicias-del-mar/principal.jpg',
-    horario: '11:00 AM - 05:00 PM',
-    telefono: '0955555555',
-    diasAtencion: ['Viernes', 'Sábado', 'Domingo'],
-    direccionFisica: 'Malecón de Puerto Cayo',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/las-delicias-del-mar/foto1.jpeg',
-      '/imagenes/las-delicias-del-mar/foto2.jpeg',
-      '/imagenes/las-delicias-del-mar/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.4183, lng: -80.7381 },
-  },
-  {
-    id: 'la-esquina-del-sabor',
-    nombre: 'La Esquina del Sabor',
-    categoria: 'Desayunos',
-    imagenUrl: '/imagenes/la-esquina-del-sabor/principal.jpg',
-    horario: '07:30 AM - 11:30 AM',
-    telefono: '0944444444',
-    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado'],
-    direccionFisica: 'Esquina de la Calle Sucre y 10 de Agosto',
-    menuUrl: '#',
-    instagram: '#',
-    imagenesExtra: [
-      '/imagenes/la-esquina-del-sabor/foto1.jpeg',
-      '/imagenes/la-esquina-del-sabor/foto2.jpeg',
-      '/imagenes/la-esquina-del-sabor/foto3.jpeg'
-    ],
-    coordenadas: { lat: -1.3475, lng: -80.5805 },
-  },
 
-  // --- ⬇️ INICIO DE LOS 6 LOCALES NUEVOS CON DATOS REALES Y FICTICIOS ⬇️ ---
   {
     id: 'cevicheria-overtime',
-    nombre: 'Cevichería Overtime', // Dato real (inferido)
-    categoria: 'Mariscos', // <-- DATO FALSO (inferido)
-    imagenUrl: '/imagenes/cevicheria-overtime/logo.jpg', // Dato de tu captura
-    horario: '10:00 AM - 06:00 PM', // <-- DATO FALSO
-    telefono: '052600617', // Dato real
-    diasAtencion: ['Lunes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    nombre: 'Cevichería Overtime', 
+    categoria: 'Mariscos', 
+    imagenUrl: '/imagenes/cevicheria-overtime/logo.png', 
+    horario: '8:30 AM - 03:00 PM', 
+    telefono: '0989825565', 
+    diasAtencion: ['Lunes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
     direccionFisica: 'MC3F+2HV, 10 de Agosto, Jipijapa', // Dato real
-    menuUrl: '#', // <-- DATO FALSO (placeholder)
-    instagram: 'https://www.instagram.com/overtime.cevicheria', // Dato real
+    menuUrl: '#', // sin el dato
+    instagram: 'https://www.instagram.com/overtime.cevicheria', 
     imagenesExtra: [ // Datos de tu captura
-      '/imagenes/cevicheria-overtime/comida1.jpg',
-      '/imagenes/cevicheria-overtime/comida2.jpg',
-      '/imagenes/cevicheria-overtime/comida3.jpg',
-      '/imagenes/cevicheria-overtime/comida4.jpg',
-      '/imagenes/cevicheria-overtime/comida5.jpg',
+      '/imagenes/cevicheria-overtime/comida1.png',
+      '/imagenes/cevicheria-overtime/comida2.png',
+      '/imagenes/cevicheria-overtime/comida3.png',
+      '/imagenes/cevicheria-overtime/comida4.png',
+      '/imagenes/cevicheria-overtime/comida5.png',
     ],
-    coordenadas: { lat: -1.3474, lng: -80.5785 }, // <-- DATO FALSO (aprox.)
+    coordenadas: { lat: -1.3474, lng: -80.5785 },
+    ubicacionUrl: 'https://maps.app.goo.gl/M9UoVto9vBb8JRC3A',
   },
   {
     id: 'parrillada-edward',
     nombre: 'Parrillada Edward', // Dato real (inferido)
-    categoria: 'Parrillada', // <-- DATO FALSO (inferido)
-    imagenUrl: '/imagenes/parrillada-edward/edward-logo.jpg', // Dato de tu captura
+    categoria: 'Parrillada', // real
+    imagenUrl: '/imagenes/parrillada-edward/edward-logo.png',
     horario: '05:00 PM - 11:00 PM', // <-- DATO FALSO
     telefono: '0987040472', // Dato real
-    diasAtencion: ['Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    diasAtencion: ['Lunes','Martes' ,'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
     direccionFisica: 'Bolivar y, C. Guayas, Jipijapa 130301', // Dato real
-    menuUrl: '#', // <-- DATO FALSO (placeholder)
+    menuUrl: '#', // aun no tenemos
     instagram: 'https://www.instagram.com/parrilladaedward', // Dato real
     imagenesExtra: [ // Datos de tu captura
-      '/imagenes/parrillada-edward/comida1.jpg',
-      '/imagenes/parrillada-edward/comida2.jpg',
-      '/imagenes/parrillada-edward/comida3.jpg',
-      '/imagenes/parrillada-edward/comida4.jpg',
-      '/imagenes/parrillada-edward/comida5.jpg',
+      '/imagenes/parrillada-edward/comida1.PNG',
+      '/imagenes/parrillada-edward/comida2.PNG',
+      '/imagenes/parrillada-edward/comida3.PNG',
+      '/imagenes/parrillada-edward/comida4.PNG',
+      '/imagenes/parrillada-edward/comida5.PNG',
     ],
-    coordenadas: { lat: -1.3480, lng: -80.5790 }, // <-- DATO FALSO (aprox.)
+    coordenadas: { lat: -1.3489617491380343, lng: -80.58085514047282 }, 
+    ubicacionUrl: 'https://maps.app.goo.gl/HGUddxax8ZpD5BJa6',
   },
   {
     id: 'luister-maloso',
     nombre: 'Luister Maloso', // Dato real (inferido)
-    categoria: 'Comida Rápida', // <-- DATO FALSO (inferido)
-    imagenUrl: '/imagenes/luister-maloso/principal.jpg', // <-- DATO FALSO (ruta inventada)
-    horario: '06:00 PM - 11:30 PM', // <-- DATO FALSO
+    categoria: 'Parrillada', // <-- DATO FALSO (inferido)
+    imagenUrl: '/imagenes/luister-maloso/luister-logo.PNG', // <-- DATO FALSO (ruta inventada)
+    horario: '05:00 PM - 10:30 PM', // <-- real
     telefono: '0984540603', // Dato real
-    diasAtencion: ['Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    diasAtencion: ['Miercoles','Jueves','Viernes', 'Sábado', 'Domingo'], 
     direccionFisica: 'Rocafuerte entre Febres Cordero, y, Jipijapa 130301', // Dato real
     menuUrl: '#', // <-- DATO FALSO (placeholder)
-    instagram: 'https://www.instagram.com/luistermaloso', // Dato real
+    instagram: 'https://www.instagram.com/luistermaloso?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', // Dato real
     imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
-      '/imagenes/luister-maloso/foto1.jpg',
-      '/imagenes/luister-maloso/foto2.jpg',
-      '/imagenes/luister-maloso/foto3.jpg'
+      '/imagenes/luister-maloso/local1.PNG',
+      '/imagenes/luister-maloso/comida1.PNG',
+      '/imagenes/luister-maloso/comida2.PNG',
+      '/imagenes/luister-maloso/comida3.PNG',
+      '/imagenes/luister-maloso/comida4.PNG',
+      '/imagenes/luister-maloso/comida5.PNG',
+      '/imagenes/luister-maloso/comida6.PNG',
+      '/imagenes/luister-maloso/comida7.PNG',
+      '/imagenes/luister-maloso/comida8.PNG'
     ],
-    coordenadas: { lat: -1.3490, lng: -80.5810 }, // <-- DATO FALSO (aprox.)
+    coordenadas: { lat: -1.3499601624772233, lng: -80.58142771475086 }, 
+    ubicacionUrl: 'https://maps.app.goo.gl/m5LTeqS7jLPJKZL26',
   },
   {
     id: 'raspados-restaurante',
-    nombre: 'Raspados Restaurante', // Dato real (inferido)
-    categoria: 'Tradicional', // <-- DATO FALSO (inferido)
-    imagenUrl: '/imagenes/raspados-restaurante/principal.jpg', // <-- DATO FALSO (ruta inventada)
-    horario: '09:00 AM - 05:00 PM', // <-- DATO FALSO
+    nombre: 'Raspados Restaurante', // 
+    categoria: 'Comida Rápida', //
+    imagenUrl: '/imagenes/raspados-restaurante/raspados-logo.PNG',
+    horario: '06:00 PM - 11:00 PM',
     telefono: '0978780863', // Dato real
-    diasAtencion: ['Sábado', 'Domingo'], // <-- DATO FALSO
+    diasAtencion: ['Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
     direccionFisica: 'Jipijapa Cdla. Parrales Iguale Calles, y H. Vasquez Esquina, Jipijapa 130305', // Dato real
-    menuUrl: '#', // <-- DATO FALSO (placeholder)
-    instagram: 'https://www.instagram.com/raspadosrestaurante', // Dato real
-    imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
-      '/imagenes/raspados-restaurante/foto1.jpg',
-      '/imagenes/raspados-restaurante/foto2.jpg',
-      '/imagenes/raspados-restaurante/foto3.jpg'
+    menuUrl: '/imagenes/raspados-restaurante/menu.pdf', // <-- DATO FALSO (placeholder)
+    instagram: 'https://www.instagram.com/raspadosrestaurante?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', // Dato real
+    imagenesExtra: [ 
+      '/imagenes/raspados-restaurante/comida1.PNG',
+      '/imagenes/raspados-restaurante/comida2.PNG',
+      '/imagenes/raspados-restaurante/comida3.PNG',
+      '/imagenes/raspados-restaurante/comida4.PNG',
+      '/imagenes/raspados-restaurante/comida5.PNG',
+      '/imagenes/raspados-restaurante/comida6.PNG',
+      '/imagenes/raspados-restaurante/menu1.PNG',
+      '/imagenes/raspados-restaurante/menu2.PNG',
+      '/imagenes/raspados-restaurante/menu3.PNG',
+      '/imagenes/raspados-restaurante/menu4.PNG',
+      '/imagenes/raspados-restaurante/menu5.PNG',
+      '/imagenes/raspados-restaurante/menu6.PNG',
     ],
-    coordenadas: { lat: -1.3515, lng: -80.5800 }, // <-- DATO FALSO (aprox.)
+    coordenadas: { lat: -1.360797159853025, lng: -80.59496836213194 }, 
+    ubicacionUrl: 'https://maps.app.goo.gl/VpCWfxkDkZP3RpsF6',
   },
   {
     id: 'sanduchito',
-    nombre: 'Sanduchito 593', // Dato real (tomado del Instagram)
-    categoria: 'Comida Rápida', // <-- DATO FALSO (inferido)
-    imagenUrl: '/imagenes/sanduchito/principal.jpg', // <-- DATO FALSO (ruta inventada)
-    horario: '07:00 PM - 12:00 AM', // <-- DATO FALSO
+    nombre: 'Sanduchito', 
+    categoria: 'Comida Rápida', 
+    imagenUrl: '/imagenes/sanduchito/sanduchito-logo.png', 
+    horario: '08:00 AM - 11:00 PM',
     telefono: '0978957741', // Dato real
-    diasAtencion: ['Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
+    diasAtencion: ['Lunes','Martes','Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], 
     direccionFisica: 'JCX9+FWX, Avenida Alejo Lascano, Jipijapa', // Dato real
-    menuUrl: '#', // <-- DATO FALSO (placeholder)
-    instagram: 'https://www.instagram.com/sanduchito_593', // Dato real
-    imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
-      '/imagenes/sanduchito/foto1.jpg',
-      '/imagenes/sanduchito/foto2.jpg',
-      '/imagenes/sanduchito/foto3.jpg'
+    menuUrl: '#', 
+    instagram: 'https://www.instagram.com/sanduchito_593?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', // Dato real
+    imagenesExtra: [ 
+      '/imagenes/sanduchito/comida1.png',
+      '/imagenes/sanduchito/comida2.png',
+      '/imagenes/sanduchito/comida3.png'
     ],
-    coordenadas: { lat: -1.3512, lng: -80.5802 }, // <-- DATO FALSO (aprox.)
+    coordenadas: { lat: -1.3510235878080221,  lng: -80.5801650240795},
+    ubicacionUrl: 'https://maps.app.goo.gl/YA998hwT4Sj2Y1rx9',
   },
   {
     id: 'cevicheria-el-refugio',
-    nombre: 'Cevichería El Refugio', // Dato real (inferido)
-    categoria: 'Mariscos', // <-- DATO FALSO (inferido)
-    imagenUrl: '/imagenes/cevicheria-el-refugio/principal.jpg', // <-- DATO FALSO (ruta inventada)
-    horario: '09:30 AM - 04:30 PM', // <-- DATO FALSO
+    nombre: 'Cevichería El Refugio',
+    categoria: 'Mariscos', 
+    imagenUrl: '/imagenes/cevicheria-refugio/logo.jpg', 
+    horario: '09:30 AM - 04:30 PM', 
     telefono: '0993196769', // Dato real
-    diasAtencion: ['Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
-    direccionFisica: 'JCXC+J7W, Jipijapa', // Dato real
-    menuUrl: '#', // <-- DATO FALSO (placeholder)
-    instagram: 'https://www.instagram.com/cevicheria_el_refugio', // Dato real
-    imagenesExtra: [ // <-- DATOS FALSOS (rutas inventadas)
-      '/imagenes/cevicheria-el-refugio/foto1.jpg',
-      '/imagenes/cevicheria-el-refugio/foto2.jpg',
-      '/imagenes/cevicheria-el-refugio/foto3.jpg'
+    diasAtencion: ['Lunes','Martes' ,'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], 
+    direccionFisica: 'JCX9+FWX, Avenida Alejo Lascano, Jipijapa',
+    menuUrl: '#', 
+    instagram: 'https://www.instagram.com/cevicheria_el_refugio?utm_source=ig_web_button_share_sheet&igsh=ZDNlZDc0MzIxNw==', // Dato real
+    imagenesExtra: [ 
+      '/imagenes/cevicheria-refugio/comida1.PNG',
+      '/imagenes/cevicheria-refugio/comida2.PNG',
+      '/imagenes/cevicheria-refugio/comida3.PNG'
     ],
-    coordenadas: { lat: -1.3508, lng: -80.5793 }, // <-- DATO FALSO (aprox.)
+    coordenadas: { lat: -1.351010832562022,  lng: -80.5800757125258 }, 
+    ubicacionUrl: 'https://maps.app.goo.gl/ePa4tpVAGd6mAxUN9',
   },
-  // --- ⬆️ FIN DE LOS 6 LOCALES NUEVOS ⬆️ ---
+ // los nuevos locales de Manta y Portoviejo
+  // --- PORTOVIEJO ---
+  {
+    id: 'iche-restaurante',
+    nombre: 'Iche Restaurante',
+    categoria: 'Gourmet',
+    imagenUrl: '/imagenes/iche-restaurante/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '12:00 PM - 11:00 PM',
+    telefono: '0991847502',
+    diasAtencion: ['Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Km 1.5 vía a Manta, Portoviejo',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/iche.rest/',
+    imagenesExtra: [
+      '/imagenes/iche-restaurante/foto1.jpg',
+      '/imagenes/iche-restaurante/foto2.jpg',
+      '/imagenes/iche-restaurante/foto3.jpg',
+    ],
+    coordenadas: { lat: -1.0543, lng: -80.4739 },
+    ubicacionUrl: 'https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D$',
+  },
+  {
+    id: 'el-tomate-grill',
+    nombre: 'El Tomate Grill',
+    categoria: 'Parrillada',
+    imagenUrl: '/imagenes/el-tomate-grill/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '12:00 PM - 11:00 PM',
+    telefono: '0993081740',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Av. Reales Tamarindos, Portoviejo',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/eltomategrill/',
+    imagenesExtra: [
+      '/imagenes/el-tomate-grill/foto1.jpg',
+      '/imagenes/el-tomate-grill/foto2.jpg',
+      '/imagenes/el-tomate-grill/foto3.jpg',
+    ],
+    coordenadas: { lat: -1.0425, lng: -80.4665 },
+    ubicacionUrl: 'https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3D$',
+  },
+  {
+    id: 'la-esquina-de-ales',
+    nombre: 'La Esquina de Ales',
+    categoria: 'Comida Rápida',
+    imagenUrl: '/imagenes/la-esquina-de-ales/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '5:00 PM - 11:00 PM',
+    telefono: '0997719091',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Av. Manabí y calle C, Portoviejo',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/laesquinadeales/',
+    imagenesExtra: [
+      '/imagenes/la-esquina-de-ales/foto1.jpg',
+      '/imagenes/la-esquina-de-ales/foto2.jpg',
+      '/imagenes/la-esquina-de-ales/foto3.jpg',
+    ],
+    coordenadas: { lat: -1.0501, lng: -80.4674 },
+    ubicacionUrl: 'https://www.google.com/search?q=https://www.google.com/maps/search/%3Fapi%3D1%26query%3D',
+  },
+  {
+    id: 'cocomar-portoviejo',
+    nombre: 'Cocomar Portoviejo',
+    categoria: 'Mariscos',
+    imagenUrl: '/imagenes/cocomar-portoviejo/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '10:00 AM - 5:00 PM',
+    telefono: '0994489444',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Av. Universitaria, Portoviejo',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/cocomar_portoviejo/',
+    imagenesExtra: [
+      '/imagenes/cocomar-portoviejo/foto1.jpg',
+      '/imagenes/cocomar-portoviejo/foto2.jpg',
+      '/imagenes/cocomar-portoviejo/foto3.jpg',
+    ],
+    coordenadas: { lat: -1.0401, lng: -80.4690 },
+    ubicacionUrl: 'https://maps.app.goo.gl/ePa4tpVAGd6mAxUN91',
+  },
+  {
+    id: 'asadero-el-toro',
+    nombre: 'Asadero El Toro',
+    categoria: 'Parrillada',
+    imagenUrl: '/imagenes/asadero-el-toro/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '11:00 AM - 11:00 PM',
+    telefono: '0980137772',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Av. Manabí, Portoviejo',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/asaderoeltoro.ec/',
+    imagenesExtra: [
+      '/imagenes/asadero-el-toro/foto1.jpg',
+      '/imagenes/asadero-el-toro/foto2.jpg',
+      '/imagenes/asadero-el-toro/foto3.jpg',
+    ],
+    coordenadas: { lat: -1.0506, lng: -80.4682 },
+    ubicacionUrl: 'https://maps.app.goo.gl/ePa4tpVAGd6mAxUN93',
+  },
+
+  // --- MANTA ---
+
+  {
+    id: 'martinica',
+    nombre: 'Martinica',
+    categoria: 'Gourmet',
+    imagenUrl: '/imagenes/martinica/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '1:00 PM - 11:00 PM',
+    telefono: '0989038798',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Av. Flavio Reyes y Calle 27, Manta',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/martinica.rest/',
+    imagenesExtra: [
+      '/imagenes/martinica/foto1.jpg',
+      '/imagenes/martinica/foto2.jpg',
+      '/imagenes/martinica/foto3.jpg',
+    ],
+    coordenadas: { lat: -0.9416, lng: -80.7208 },
+    ubicacionUrl: 'https://www.google.com/maps?q=',
+  },
+  {
+    id: 'la-pata-gorda',
+    nombre: 'La Pata Gorda',
+    categoria: 'Mariscos',
+    imagenUrl: '/imagenes/la-pata-gorda/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '11:00 AM - 9:00 PM',
+    telefono: '0993080432',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Malecón Escénico, Manta',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/lapatagordamanta/',
+    imagenesExtra: [
+      '/imagenes/la-pata-gorda/foto1.jpg',
+      '/imagenes/la-pata-gorda/foto2.jpg',
+      '/imagenes/la-pata-gorda/foto3.jpg',
+    ],
+    coordenadas: { lat: -0.9478, lng: -80.7101 },
+    ubicacionUrl: 'https://www.google.com/search?q=https://www.google.com/maps%3Fq%3D',
+  },
+  {
+    id: 'muya-manta',
+    nombre: 'Muya',
+    categoria: 'Fusión',
+    imagenUrl: '/imagenes/muya-manta/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '5:00 PM - 11:00 PM',
+    telefono: '0984446023',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Barrio Umiña, Manta',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/muya.manta/',
+    imagenesExtra: [
+      '/imagenes/muya-manta/foto1.jpg',
+      '/imagenes/muya-manta/foto2.jpg',
+      '/imagenes/muya-manta/foto3.jpg',
+    ],
+    coordenadas: { lat: -0.9392, lng: -80.7230 },
+    ubicacionUrl: 'https://www.google.com/maps/search/?api=1&query=',
+  },
+  {
+    id: 'el-charrua-manta',
+    nombre: 'El Charrúa',
+    categoria: 'Parrillada',
+    imagenUrl: '/imagenes/el-charrua-manta/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '12:00 PM - 11:00 PM',
+    telefono: '052620906',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Av. Flavio Reyes, Manta',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/elcharruamanta/',
+    imagenesExtra: [
+      '/imagenes/el-charrua-manta/foto1.jpg',
+      '/imagenes/el-charrua-manta/foto2.jpg',
+      '/imagenes/el-charrua-manta/foto3.jpg',
+    ],
+    coordenadas: { lat: -0.9431, lng: -80.7200 },
+    ubicacionUrl: 'https://maps.app.goo.gl/ePa4tpVAGd6mAxUN90',
+  },
+  {
+    id: 'umina-sushi',
+    nombre: 'Umiña Sushi',
+    categoria: 'Sushi',
+    imagenUrl: '/imagenes/umina-sushi/logo.jpg', // <-- RUTA DE EJEMPLO
+    horario: '1:00 PM - 11:00 PM',
+    telefono: '0999200800',
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Calle 24 y Av. Flavio Reyes, Manta',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/uminasushi/',
+    imagenesExtra: [
+      '/imagenes/umina-sushi/foto1.jpg',
+      '/imagenes/umina-sushi/foto2.jpg',
+      '/imagenes/umina-sushi/foto3.jpg',
+    ],
+    coordenadas: { lat: -0.9429, lng: -80.7202 },
+    ubicacionUrl: 'https://maps.app.goo.gl/ePa4tpVAGd6mAxUN92',
+  },
 ];

@@ -20,10 +20,8 @@ export default async function PaginaLocal({ params }: PaginaLocalProps) {
 
   const mensajeWhatsApp = encodeURIComponent(`¡Hola! Vi su local "${local.nombre}" en el catálogo Jipi-Jama y quisiera más información.`);
   
-  const googleMapsUrl = `https://www.google.com/maps/search/?api=1&query=${encodeURIComponent(local.direccionFisica)}`;
-
+  const googleMapsUrl = local.ubicacionUrl;
   return (
-    // CORRECCIÓN: Añadimos un fondo oscuro para toda la página
     <main className="bg-crema dark:bg-gray-900 min-h-screen">
       <div className="container mx-auto max-w-5xl p-4 sm:p-8">
         
