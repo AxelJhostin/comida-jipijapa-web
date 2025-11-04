@@ -259,7 +259,7 @@ export const locales: Local[] = [
 
   // --- MANTA ---
   // No se ha modificado nada en los locales de Manta, solo se han añadido nuevos.
-
+  /*
   {
     id: 'martinica',
     nombre: 'Martinica',
@@ -355,4 +355,5 @@ export const locales: Local[] = [
     coordenadas: { lat: -0.9429, lng: -80.7202 },
     ubicacionUrl: 'https://maps.app.goo.gl/ePa4tpVAGd6mAxUN92',
   },
+  */
 ];
