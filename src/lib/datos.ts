@@ -48,7 +48,7 @@ export const locales: Local[] = [
     id: 'parrillada-edward',
     nombre: 'Parrillada Edward', // Dato real (inferido)
     categoria: 'Parrillada', // real
-    imagenUrl: '/imagenes/parrillada-edward/edward-logo.png',
+    imagenUrl: '/imagenes/parrillada-edward/edward-logo.PNG',
     horario: '05:00 PM - 11:00 PM', // <-- DATO FALSO
     telefono: '0987040472', // Dato real
     diasAtencion: ['Lunes','Martes' ,'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'], // <-- DATO FALSO
