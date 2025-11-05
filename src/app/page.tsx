@@ -13,6 +13,7 @@ export default function Home() {
   const [categoriaSeleccionada, setCategoriaSeleccionada] = useState('Todos');
   const [estaCargando, setEstaCargando] = useState(true);
 
+  // NOTA: Como hablamos, mantengo tu estado de carga de 1.5s
   useEffect(() => {
     const timer = setTimeout(() => {
       setEstaCargando(false);
@@ -23,6 +24,21 @@ export default function Home() {
 
   const categorias = ['Todos', ...new Set(locales.map(local => local.categoria))];
 
+  // --- INICIO DE LA LÓGICA DE FILTRO MEJORADA ---
+
+  // 1. Nueva función para manejar el clic en las categorías
+  const handleCategoriaClick = (categoria: string) => {
+    setCategoriaSeleccionada(categoria);
+    setTerminoDeBusqueda(''); // Resetea la búsqueda al elegir categoría
+  };
+
+  // 2. Nueva función para manejar la escritura en la barra de búsqueda
+  const handleBusquedaChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+    setTerminoDeBusqueda(e.target.value);
+    setCategoriaSeleccionada('Todos'); // Resetea la categoría al buscar
+  };
+
+  // 3. La lógica de filtrado ahora funciona perfectamente
   const localesFiltrados = locales.filter((local) => {
     const coincideCategoria = 
       categoriaSeleccionada === 'Todos' || local.categoria === categoriaSeleccionada;
@@ -32,8 +48,21 @@ export default function Home() {
       local.nombre.toLowerCase().includes(textoDeBusqueda) ||
       local.categoria.toLowerCase().includes(textoDeBusqueda);
 
+    // Si el término de búsqueda está vacío, solo filtra por categoría
+    if (textoDeBusqueda === '') {
+      return coincideCategoria;
+    }
+    
+    // Si la categoría es 'Todos', solo filtra por búsqueda
+    if (categoriaSeleccionada === 'Todos') {
+      return coincideBusqueda;
+    }
+
+    // Lógica principal (aunque una de las dos siempre será 'Todos' o "")
     return coincideCategoria && coincideBusqueda;
   });
+
+  // --- FIN DE LA LÓGICA DE FILTRO MEJORADA ---
 
   return (
     <main className="min-h-screen">
@@ -72,7 +101,7 @@ export default function Home() {
             placeholder="Buscar por nombre o categoría..."
             className="w-full px-4 py-3 border border-gray-300 rounded-lg shadow-sm focus:outline-none focus:ring-2 focus:ring-[#F97316] transition-shadow bg-white dark:bg-gray-800 dark:border-gray-600 dark:placeholder-gray-400 dark:text-crema"
             value={terminoDeBusqueda}
-            onChange={(e) => setTerminoDeBusqueda(e.target.value)}
+            onChange={handleBusquedaChange} // <-- Se usa la nueva función
           />
         </div>
         
@@ -80,8 +109,7 @@ export default function Home() {
           {categorias.map((categoria) => (
             <button
               key={categoria}
-              onClick={() => setCategoriaSeleccionada(categoria)}
-              // CORRECCIÓN: Añadimos dark:text-crema para el estado inactivo
+              onClick={() => handleCategoriaClick(categoria)} // <-- Se usa la nueva función
               className={`px-4 py-2 rounded-full text-sm font-semibold transition-all duration-200 ease-in-out
                 ${categoriaSeleccionada === categoria 
                   ? 'bg-[#F97316] text-white shadow-lg scale-105' 
@@ -103,7 +131,13 @@ export default function Home() {
         </div>
         {!estaCargando && localesFiltrados.length === 0 && (
           <div className="text-center mt-16 pb-16">
-            <p className="text-xl text-[#78716C] dark:text-gray-400">No se encontraron locales.</p>
+            <p className="text-xl text-[#78716C] dark:text-gray-400">
+              {/* Mensaje mejorado: te dice por qué no hay resultados */}
+              {terminoDeBusqueda.length > 0 
+                ? `No se encontraron locales para "${terminoDeBusqueda}"`
+                : `No hay locales en la categoría "${categoriaSeleccionada}"`
+              }
+            </p>
           </div>
         )}
       </section>
