@@ -24,6 +24,27 @@ export interface Local {
 export const locales: Local[] = [
 
   {
+    id: 'cinabell',
+    nombre: 'Cinabell_EC',
+    categoria: 'Postres',
+    imagenUrl: '/imagenes/cinabell/logo.PNG', // <-- RUTA DE EJEMPLO
+    horario: '10:00 AM - 4:00 PM',
+    telefono: '#', //No tiene numero
+    diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
+    direccionFisica: 'Jipijapa',
+    menuUrl: '#',
+    instagram: 'https://www.instagram.com/cinnabell_ec?utm_source=ig_web_button_share_sheet&igsh=MW90cm96aDFnN3htaw==',
+    imagenesExtra: [
+      '/imagenes/cinabell/foto1.PNG',
+      '/imagenes/cinabell/foto2.PNG',
+      '/imagenes/cinabell/foto3.PNG',
+      '/imagenes/cinabell/foto4.PNG',
+      '/imagenes/cinabell/foto5.PNG',
+    ],
+    coordenadas: { lat: -0.9416, lng: -80.7208 },
+    ubicacionUrl: 'https://maps.app.goo.gl/ENiU9MSuatxP4wPD8',
+  },
+  {
     id: 'cevicheria-overtime',
     nombre: 'Cevichería Overtime', 
     categoria: 'Mariscos', 
@@ -256,6 +277,7 @@ export const locales: Local[] = [
     coordenadas: { lat: -1.0506, lng: -80.4682 },
     ubicacionUrl: 'https://maps.app.goo.gl/bmQGgDhWTjLpePPe7',
   },
+  
 
   // --- MANTA ---
   // No se ha modificado nada en los locales de Manta, solo se han añadido nuevos.
