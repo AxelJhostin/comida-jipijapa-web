@@ -27,7 +27,7 @@ export const locales: Local[] = [
     id: 'cinabell',
     nombre: 'Cinabell_EC',
     categoria: 'Postres',
-    imagenUrl: '/imagenes/cinabell/logo.png', // <-- RUTA DE EJEMPLO
+    imagenUrl: '/imagenes/cinnabell/logo.png', // <-- RUTA DE EJEMPLO
     horario: '10:00 AM - 4:00 PM',
     telefono: '#', //No tiene numero
     diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
@@ -35,11 +35,11 @@ export const locales: Local[] = [
     menuUrl: '#',
     instagram: 'https://www.instagram.com/cinnabell_ec?utm_source=ig_web_button_share_sheet&igsh=MW90cm96aDFnN3htaw==',
     imagenesExtra: [
-      '/imagenes/cinabell/foto1.PNG',
-      '/imagenes/cinabell/foto2.PNG',
-      '/imagenes/cinabell/foto3.PNG',
-      '/imagenes/cinabell/foto4.PNG',
-      '/imagenes/cinabell/foto5.PNG',
+      '/imagenes/cinnabell/foto1.PNG',
+      '/imagenes/cinnabell/foto2.PNG',
+      '/imagenes/cinnabell/foto3.PNG',
+      '/imagenes/cinnabell/foto4.PNG',
+      '/imagenes/cinnabell/foto5.PNG',
     ],
     coordenadas: { lat: -0.9416, lng: -80.7208 },
     ubicacionUrl: 'https://maps.app.goo.gl/ENiU9MSuatxP4wPD8',
