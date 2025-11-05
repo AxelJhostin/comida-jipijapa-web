@@ -29,7 +29,7 @@ export default function Footer() {
           {/* Redes Sociales */}
           <div className="flex gap-4">
             <a 
-              href="https://instagram.com/jipijama.app" // El enlace actualizado a tu Instagram
+              href="https://www.instagram.com/skywarddevs/" // El enlace actualizado a tu Instagram
               target="_blank" 
               rel="noopener noreferrer" 
               className="text-texto-secundario hover:text-naranja-principal transition-colors"

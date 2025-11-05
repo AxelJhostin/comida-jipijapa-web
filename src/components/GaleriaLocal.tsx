@@ -16,12 +16,12 @@ export default function GaleriaLocal({ local }: { local: Local }) {
   return (
     <>
       {/* Imagen Principal */}
-      <div className="relative h-64 md:h-96 w-full overflow-hidden rounded-lg shadow-lg">
+      <div className="relative h-64 md:h-96 w-full overflow-hidden rounded-lg shadow-lg bg-gray-900 dark:bg-gray-800">
         <Image
           src={imagenSeleccionada}
           alt={`Imagen de ${local.nombre}`}
           fill
-          style={{ objectFit: 'cover' }}
+          style={{ objectFit: 'contain' }} // <-- ÚNICO CAMBIO: de 'cover' a 'contain'
           priority
         />
       </div>
@@ -31,7 +31,7 @@ export default function GaleriaLocal({ local }: { local: Local }) {
         <span className="text-sm font-semibold uppercase tracking-wider text-naranja-principal">
           {local.categoria}
         </span>
-        <h1 className="text-4xl sm:text-5xl font-extrabold text-texto-principal mt-1">
+        <h1 className="text-4xl sm:text-5xl font-extrabold text-texto-principal dark:text-crema mt-1">
           {local.nombre}
         </h1>
       </div>
@@ -55,7 +55,7 @@ export default function GaleriaLocal({ local }: { local: Local }) {
                   src={imgUrl} 
                   alt={`Galería de ${local.nombre} - ${index + 1}`} 
                   fill 
-                  style={{ objectFit: 'cover' }}
+                  style={{ objectFit: 'cover' }} // <-- Dejamos 'cover' en las miniaturas para que la cuadrícula se vea uniforme
                 />
               </div>
             ))}

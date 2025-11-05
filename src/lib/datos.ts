@@ -27,7 +27,7 @@ export const locales: Local[] = [
     id: 'cinabell',
     nombre: 'Cinabell_EC',
     categoria: 'Postres',
-    imagenUrl: '/imagenes/cinnabell/logo.png', // <-- RUTA DE EJEMPLO
+    imagenUrl: '/imagenes/cinnabell/logo.PNG', // <-- RUTA DE EJEMPLO
     horario: '10:00 AM - 4:00 PM',
     telefono: '#', //No tiene numero
     diasAtencion: ['Lunes', 'Martes', 'Miércoles', 'Jueves', 'Viernes', 'Sábado', 'Domingo'],
